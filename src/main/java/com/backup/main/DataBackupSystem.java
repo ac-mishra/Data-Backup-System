@@ -199,6 +199,20 @@
 
                             );
 
+                            System.out.println(
+
+                                    "  • backups/"
+
+                                            +
+
+                                            id
+
+                                            +
+
+                                            ".json"
+
+                            );
+
 
                             System.out.println(
 
@@ -386,9 +400,14 @@
                         case 5:
 
 
+                            System.out.println(
+
+                                    "\n=== ALL BACKUP VERSIONS ==="
+
+                            );
+
 
                             manager.listVersions();
-
 
 
                             break;
@@ -399,13 +418,20 @@
 
 
 
+                            System.out.println(
+
+                                    "\nCleaning up backups..."
+
+                            );
+
+
                             manager.cleanupOldBackups();
 
 
 
                             System.out.println(
 
-                                    "Cleanup Completed"
+                                    "\nCleanup Completed"
 
                             );
 
@@ -444,7 +470,7 @@
 
                             System.out.println(
 
-                                    "Application Closed"
+                                    "Application Closed\nDeveloped By - Amrit Chandan Mishra"
 
                             );
 

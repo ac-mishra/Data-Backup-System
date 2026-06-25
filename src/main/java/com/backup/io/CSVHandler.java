@@ -8,8 +8,7 @@ import java.nio.file.Files;
 
 import java.nio.file.Paths;
 
-import java.util.HashMap;
-
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 
@@ -133,7 +132,7 @@ public class CSVHandler {
                 =
 
 
-                new HashMap<>();
+                new LinkedHashMap<>();
 
 
 

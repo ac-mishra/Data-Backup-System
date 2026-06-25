@@ -42,13 +42,7 @@ public class CompressionUtils {
             int length;
 
 
-            while(
-
-                    (length=fis.read(buffer))
-
-                            >0
-
-            ){
+            while((length=fis.read(buffer)) != -1){
 
 
                 gzip.write(
@@ -115,7 +109,7 @@ public class CompressionUtils {
 
                     (length=gzip.read(buffer))
 
-                            >0
+                            !=-1
 
             ){
 

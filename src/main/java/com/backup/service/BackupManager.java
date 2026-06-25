@@ -71,22 +71,57 @@ public class BackupManager {
 
         double binarySize = 0;
 
+        double compressedSize = 0;
 
-        File folder = new File(BACKUP_DIR);
-
-        File[] files = folder.listFiles();
-
-
-        if (files != null) {
+        double csvSize = 0;
 
 
-            for (File file : files) {
+
+        File folder =
+
+                new File(
+
+                        BACKUP_DIR
+
+                );
 
 
-                if (file.getName().endsWith(".dat")) {
+
+        File[] files =
+
+                folder.listFiles();
+
+
+
+        if(files!=null){
+
+
+            for(
+
+                    File file
+
+                    :
+
+                    files
+
+            ){
+
+
+                if(
+
+                        file.getName()
+
+                                .endsWith(
+
+                                        ".dat"
+
+                                )
+
+                ){
 
 
                     binarySize +=
+
 
                             FilesUtils.getFileSizeMB(
 
@@ -98,10 +133,65 @@ public class BackupManager {
                 }
 
 
+                else if(
+
+                        file.getName()
+
+                                .endsWith(
+
+                                        ".gz"
+
+                                )
+
+                ){
+
+
+                    compressedSize +=
+
+
+                            FilesUtils.getFileSizeMB(
+
+                                    file.getPath()
+
+                            );
+
+
+                }
+
+
+
+                else if(
+
+                        file.getName()
+
+                                .endsWith(
+
+                                        ".csv"
+
+                                )
+
+                ){
+
+
+                    csvSize +=
+
+
+                            FilesUtils.getFileSizeMB(
+
+                                    file.getPath()
+
+                            );
+
+
+                }
+
+
+
             }
 
 
         }
+
 
 
         statistics.setBinarySize(
@@ -111,17 +201,31 @@ public class BackupManager {
         );
 
 
+        statistics.setCompressedSize(
+
+                compressedSize
+
+        );
+
+
+        statistics.setCsvSize(
+
+                csvSize
+
+        );
+
+
         statistics.setTotalSize(
 
-                statistics.getBinarySize()
+                binarySize
 
                         +
 
-                        statistics.getCompressedSize()
+                        compressedSize
 
                         +
 
-                        statistics.getCsvSize()
+                        csvSize
 
         );
 
@@ -354,11 +458,23 @@ public class BackupManager {
         );
 
 
-        return recoveryManager.restore(
+        BackupData backup =
+
+                recoveryManager.restore(
+
+                        temp
+
+                );
+
+
+        new File(
 
                 temp
 
-        );
+        ).delete();
+
+
+        return backup;
 
 
     }
@@ -516,9 +632,25 @@ public class BackupManager {
 
         }
 
-        for (File file : files) {
+        for(File file : files){
 
-            if (file.getName().endsWith(".dat")) {
+            if(
+
+                    file.getName().endsWith(".dat")
+
+                            ||
+
+                            file.getName().endsWith(".gz")
+
+                            ||
+
+                            file.getName().endsWith(".csv")
+
+                            ||
+
+                            file.getName().endsWith(".json")
+
+            ){
 
                 file.delete();
 

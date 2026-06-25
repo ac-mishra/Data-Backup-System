@@ -86,6 +86,14 @@ public class FilesUtils {
 
                 dir.listFiles();
 
+        if(
+
+                files==null
+
+        )
+
+            return 0;
+
 
         int count = 0;
 

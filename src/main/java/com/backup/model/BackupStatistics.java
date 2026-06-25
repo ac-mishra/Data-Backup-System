@@ -162,6 +162,10 @@ public class BackupStatistics {
 
                         +
 
+                        "\n📊 Storage Usage"
+
+                        +
+
                         "\nTotal Backups : "
 
                         +
@@ -171,7 +175,7 @@ public class BackupStatistics {
 
                         +
 
-                        "\nBinary Size : "
+                        "\nBinary Files : "
 
                         +
 
@@ -180,7 +184,7 @@ public class BackupStatistics {
 
                         +
 
-                        "\nCompressed Size : "
+                        "\nCompressed Files : "
 
                         +
 
@@ -189,7 +193,7 @@ public class BackupStatistics {
 
                         +
 
-                        "\nCSV Size : "
+                        "\nCSV Files : "
 
                         +
 

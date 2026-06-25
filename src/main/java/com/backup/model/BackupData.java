@@ -3,11 +3,13 @@ package com.backup.model;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.UUID;
 
 public class BackupData implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private String backupId;
 
@@ -15,7 +17,7 @@ public class BackupData implements Serializable {
 
     private String description;
 
-    private HashMap<String, Object> data;
+    private LinkedHashMap<String,Object> data;
 
 
     public BackupData() {
@@ -66,7 +68,7 @@ public class BackupData implements Serializable {
 
         this.data =
 
-                new HashMap<>(
+                new LinkedHashMap<>(
 
                         data
 
@@ -97,7 +99,7 @@ public class BackupData implements Serializable {
     }
 
 
-    public HashMap<String, Object> getData() {
+    public LinkedHashMap<String,Object> getData(){
 
         return data;
 
