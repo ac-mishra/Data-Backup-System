@@ -42,6 +42,8 @@ public class BackupManager {
 
         statistics = new BackupStatistics();
 
+        updateStatistics();
+
     }
 
 
@@ -438,7 +440,10 @@ public class BackupManager {
             throws Exception {
 
 
-        for (
+        int i = 1;
+
+
+        for(
 
                 BackupData backup
 
@@ -446,7 +451,42 @@ public class BackupManager {
 
                 versionManager.getVersions()
 
-        ) {
+        ){
+
+
+            if(i==1){
+
+
+                System.out.println(
+
+                        "\nVersion 1 (Most Recent)\n"
+
+                );
+
+
+            }
+
+
+            else{
+
+
+                System.out.println(
+
+                        "\nVersion "
+
+                                +
+
+                                i
+
+                                +
+
+                                "\n"
+
+                );
+
+
+            }
+
 
 
             System.out.println(
@@ -455,6 +495,8 @@ public class BackupManager {
 
             );
 
+
+            i++;
 
         }
 

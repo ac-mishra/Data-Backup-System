@@ -302,9 +302,25 @@
 
                             System.out.println(
 
+                                    "\n✅ RESTORED BACKUP:\n"
+
+                            );
+
+                            System.out.println(
+
                                     restore
 
                             );
+
+                            System.out.println(
+
+                                    "\n📦 Data Contents:\n"
+
+                            );
+
+                            restore.displayData();
+
+                            System.out.println();
 
 
                             break;
@@ -342,9 +358,25 @@
 
                             System.out.println(
 
+                                    "\nCSV Imported Successfully\n"
+
+                            );
+
+                            System.out.println(
+
                                     csvBackup
 
                             );
+
+                            System.out.println(
+
+                                    "\n📦 Data Contents:\n"
+
+                            );
+
+                            csvBackup.displayData();
+
+                            System.out.println();
 
 
                             break;

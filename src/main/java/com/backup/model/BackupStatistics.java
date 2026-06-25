@@ -14,21 +14,19 @@ public class BackupStatistics {
     private double totalSize;
 
 
+    public BackupStatistics() {
 
-    public BackupStatistics(){
+        totalBackups = 0;
 
-        totalBackups=0;
+        binarySize = 0;
 
-        binarySize=0;
+        compressedSize = 0;
 
-        compressedSize=0;
+        csvSize = 0;
 
-        csvSize=0;
-
-        totalSize=0;
+        totalSize = 0;
 
     }
-
 
 
     public BackupStatistics(
@@ -41,19 +39,19 @@ public class BackupStatistics {
 
             double csvSize
 
-    ){
+    ) {
 
 
-        this.totalBackups=totalBackups;
+        this.totalBackups = totalBackups;
 
-        this.binarySize=binarySize;
+        this.binarySize = binarySize;
 
-        this.compressedSize=compressedSize;
+        this.compressedSize = compressedSize;
 
-        this.csvSize=csvSize;
+        this.csvSize = csvSize;
 
 
-        this.totalSize=
+        this.totalSize =
 
                 binarySize
 
@@ -68,12 +66,10 @@ public class BackupStatistics {
     }
 
 
-
     public int getTotalBackups() {
 
         return totalBackups;
     }
-
 
 
     public double getBinarySize() {
@@ -82,12 +78,10 @@ public class BackupStatistics {
     }
 
 
-
     public double getCompressedSize() {
 
         return compressedSize;
     }
-
 
 
     public double getCsvSize() {
@@ -96,76 +90,69 @@ public class BackupStatistics {
     }
 
 
-
     public double getTotalSize() {
 
         return totalSize;
     }
 
 
-
     public void setTotalBackups(
 
             int totalBackups
 
-    ){
+    ) {
 
-        this.totalBackups=totalBackups;
+        this.totalBackups = totalBackups;
 
     }
-
 
 
     public void setBinarySize(
 
             double binarySize
 
-    ){
+    ) {
 
-        this.binarySize=binarySize;
+        this.binarySize = binarySize;
 
     }
-
 
 
     public void setCompressedSize(
 
             double compressedSize
 
-    ){
+    ) {
 
-        this.compressedSize=compressedSize;
+        this.compressedSize = compressedSize;
 
     }
-
 
 
     public void setCsvSize(
 
             double csvSize
 
-    ){
+    ) {
 
-        this.csvSize=csvSize;
+        this.csvSize = csvSize;
 
     }
-
 
 
     public void setTotalSize(
 
             double totalSize
 
-    ){
+    ) {
 
-        this.totalSize=totalSize;
+        this.totalSize = totalSize;
 
     }
 
 
-
     @Override
-    public String toString(){
+    public String toString() {
 
 
         return
@@ -188,7 +175,7 @@ public class BackupStatistics {
 
                         +
 
-                        binarySize
+                        String.format("%.4f MB", binarySize)
 
 
                         +
@@ -197,7 +184,7 @@ public class BackupStatistics {
 
                         +
 
-                        compressedSize
+                        String.format("%.4f MB", compressedSize)
 
 
                         +
@@ -206,7 +193,7 @@ public class BackupStatistics {
 
                         +
 
-                        csvSize
+                        String.format("%.4f MB", csvSize)
 
 
                         +
@@ -215,11 +202,10 @@ public class BackupStatistics {
 
                         +
 
-                        totalSize;
+                        String.format("%.4f MB", totalSize) ;
 
 
     }
-
 
 
 }

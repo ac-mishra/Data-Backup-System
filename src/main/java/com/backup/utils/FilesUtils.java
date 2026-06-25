@@ -87,22 +87,42 @@ public class FilesUtils {
                 dir.listFiles();
 
 
-        return
+        int count = 0;
 
 
-                files == null
+        for(
+
+                File file
+
+                :
+
+                files
+
+        ){
 
 
-                        ?
+            if(
+
+                    file.getName()
+
+                            .endsWith(
+
+                                    ".dat"
+
+                            )
+
+            ){
 
 
-                        0
+                count++;
+
+            }
 
 
-                        :
+        }
 
 
-                        files.length;
+        return count;
 
 
     }
